@@ -26,7 +26,15 @@ namespace HPlusSportsAPI.Services
 
         public async Task<List<OrderHistoryItem>> GetOrderHistoryAsync()
         {
-            return new List<OrderHistoryItem>();
+            CloudStorageAccount acct = CloudStorageAccount.Parse(config[Constants.KEY_STORAGE_CNN]);
+            var tableClient = acct.CreateCloudTableClient();
+            var table = tableClient.GetTableReference(tableName);
+            await table.CreateIfNotExistsAsync();
+            var historyQuery = new TableQuery<Models.OrderHistoryItem>()
+                .Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, partitionName));
+            TableContinuationToken queryToken = null;
+            var tableItems = await table.ExecuteQuerySegmentedAsync<Models.OrderHistoryItem>(historyQuery, queryToken);
+            return tableItems.ToList();
         }
     }
 }
