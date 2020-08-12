@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="DCRSportsAPI" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^c:\\dev\\linkedin\ learning\\v2\\ex_files_building_web_app_azure\\ex_files_web_app_microsoft_azure\\exercise\ files\\ch03\\01\\begin\\hplussportsapi\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>

@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="DCRSportsWeb" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\DEV\\LinkedIn\ Learning\\V2\\Ex_Files_Building_Web_App_Azure\\Ex_Files_Web_App_Microsoft_Azure\\Exercise\ Files\\CH03\\01\\Begin\\HPlusSportsWeb\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>
