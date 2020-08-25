@@ -16,7 +16,7 @@ namespace HplusFunctions
         [FunctionName("OrderFunction")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequestMessage req, 
-            [Table("orderhistory")]ICollector<TableOrderItem> items,
+            [Table("orderhistory", Connection = "AzureWebJobsStorage")]ICollector<TableOrderItem> items,
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
